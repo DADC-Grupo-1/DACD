@@ -2,7 +2,6 @@ import OpenFoodApi.Const;
 import OpenFoodApi.Item;
 import com.google.gson.Gson;
 
-import javax.naming.Context;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,7 +19,7 @@ public class ApiConnection {
 
         Const CONSTANT = new Const();
         HttpRequest getRequest  = HttpRequest.newBuilder()
-                .uri(new URI(CONSTANT.API_URL + CONSTANT.PRICE+ "/33423"))
+                .uri(new URI(Const.API_URL + Const.PRODUCT + "69968"))
                 .GET()
                 .build();
 
@@ -31,12 +30,8 @@ public class ApiConnection {
         System.out.println(getResponse.body());
 
         Gson gson = new Gson();
-
         Item item = gson.fromJson(getResponse.body(), Item.class);
-
-        System.out.println(item.to_string());
-
-
+        System.out.println(item.toString());
 
 
     }

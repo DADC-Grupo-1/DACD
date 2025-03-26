@@ -1,81 +1,69 @@
 package OpenFoodApi;
 
+import java.util.List;
+
 public class Item {
 
-    private int id;
-    private int code;
-    private String product_name;
-    private String product_type;
-    private String imagen_url;
-    private String currency;
-    private String price;
-    private Boolean discount;
+    public int id;
+    public String display_name;
+    public String packaging;
 
-    public String to_string() {
-        return "Item [id=" + id + ", code=" + code + ", product_name=" + product_name + ", product_type=" + product_type + ", imagen_url=" + imagen_url + ", currency=" + currency + ", price=" + price +
-                ", discount=" + discount + "]";
-    }
+    PriceInstructions price_instructions;
+    List<Photo> photos;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public int getCode() {
-        return code;
+    public String getUnit_price() {
+        return price_instructions.unit_price;
     }
-
-    public void setCode(int code) {
-        this.code = code;
+    public String getBulk_price() {
+        return price_instructions.bulk_price;
+    }
+    public String getReference_format() {
+        return price_instructions.reference_format;
+    }
+    public void setReference_format( String reference_format ) {
+        price_instructions.reference_format = reference_format;
+    }
+    public void setBulk_price( String bulk_price ) {
+        price_instructions.bulk_price = bulk_price;
+    }
+    public void getUnit_price( String unit_price ) {
+        price_instructions.unit_price = unit_price;
     }
 
-    public String getProduct_type() {
-        return product_type;
+    public class PriceInstructions {
+        public String unit_price;
+        public String bulk_price;
+        public String reference_format;
+
     }
 
-    public void setProduct_type(String product_type) {
-        this.product_type = product_type;
+    public String getZoom(){
+        return photos.get(0).zoom;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getRegula(){
+        return photos.get(0).regular;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public String getThumbnail(){
+        return photos.get(0).thumbnail;
     }
 
-    public String getImagen_url() {
-        return imagen_url;
+    public int getperspective(){
+        return photos.get(0).perspective;
+    }
+    public class Photo {
+        public String zoom;
+        public String regular;
+        public String thumbnail;
+        public int perspective;
     }
 
-    public void setImagen_url(String imagen_url) {
-        this.imagen_url = imagen_url;
+    public String toString(){
+        return "ID:" + id + " display_name: " + display_name + " packaging: " + packaging + " unit_price: " + getUnit_price()
+                + " bulk_price: " + getBulk_price() + " reference_format: " + getReference_format() + " photo zoom: " + getZoom() + " regular: " + getRegula()
+                + " thumbnail: " + getThumbnail() + " perspective: " + getperspective();
     }
 
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public Boolean getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Boolean discount) {
-        this.discount = discount;
-    }
 }
