@@ -20,12 +20,12 @@ public class ApiConnection {
 
         Const CONSTANT = new Const();
         HttpRequest getRequest  = HttpRequest.newBuilder()
-                .uri(new URI(CONSTANT.API_URL + CONSTANT.PRICE+ "/33423"))
+                .uri(new URI(CONSTANT.API_URL + CONSTANT.PRICE + "/33423"))
                 .GET()
                 .build();
 
         HttpClient httpClient = HttpClient.newHttpClient();
-        HttpResponse <String> getResponse= httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString() );
+        HttpResponse <String> getResponse= httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
 
 
         System.out.println(getResponse.body());
