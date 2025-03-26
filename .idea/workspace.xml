@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SpoonacularApi/ApiConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SpoonacularApi/Const.java" afterDir="false" />
+    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="Start Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/OpenFoodApi/ApiConection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ApiConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,15 +30,18 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;hugoamadoor&quot;
+    &quot;assignee&quot;: &quot;JVarelaa&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DADC-Grupo-1/DACD&quot;,
-    &quot;accountId&quot;: &quot;13446ea7-fec7-4f82-be63-f292afc8a452&quot;
+    &quot;url&quot;: &quot;https://github.com/DADC-Grupo-1/DACD.git&quot;,
+    &quot;accountId&quot;: &quot;9b11e0f8-044d-47a7-bc89-76a716502aed&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -72,6 +76,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="OpenFoodApi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jesus\IdeaProjects\FoodRecomender\src\main\java" />
       <recent name="C:\Users\jesus\IdeaProjects\FoodRecomender\src\main\java\org\example" />
@@ -80,8 +87,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -96,14 +103,38 @@
       <workItem from="1742574890593" duration="1246000" />
       <workItem from="1742767991509" duration="35000" />
       <workItem from="1742768623119" duration="1858000" />
-      <workItem from="1742770504918" duration="10456000" />
-      <workItem from="1742835786001" duration="5586000" />
-      <workItem from="1743009813131" duration="682000" />
+      <workItem from="1742770504918" duration="20993000" />
+      <workItem from="1742921677245" duration="1065000" />
+      <workItem from="1742994418553" duration="4779000" />
     </task>
+    <task id="LOCAL-00001" summary="Start Commit">
+      <option name="closed" value="true" />
+      <created>1742830369197</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742830369197</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
