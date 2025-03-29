@@ -1,5 +1,5 @@
-import OpenFoodApi.Const;
-import OpenFoodApi.Item;
+import Api.Const;
+import Api.Item;
 import com.google.gson.Gson;
 
 import java.io.IOException;

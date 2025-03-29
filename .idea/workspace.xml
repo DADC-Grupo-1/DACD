@@ -4,12 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="Start Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/OpenFoodApi/ApiConection.java" afterDir="false" />
+    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="Mercadona implemented">
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Jsoon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/MRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/NProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/DB/MConnect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/DB/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/DBconnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/MAIN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DB/DBMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ApiConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/ApiConection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/URL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenFoodApi/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,6 +53,10 @@
     &quot;accountId&quot;: &quot;9b11e0f8-044d-47a7-bc89-76a716502aed&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Security Analysis" />
   </component>
@@ -51,38 +69,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApiConnection.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jesus/Desktop/spotify-api-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Usuario/IdeaProjects/FoodRecomender/src/main/java/org/foorecomender/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiConnection.executor": "Run",
+    "Application.DBconnection.executor": "Run",
+    "Application.MAIN.executor": "Run",
+    "Application.MConnection.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jesus/Desktop/spotify-api-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Usuario/IdeaProjects/FoodRecomender/src/main/java/org/foorecomender/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="OpenFoodApi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jesus\IdeaProjects\FoodRecomender\MercadonaProducts\src\main\java" />
       <recent name="C:\Users\jesus\IdeaProjects\FoodRecomender\src\main\java" />
       <recent name="C:\Users\jesus\IdeaProjects\FoodRecomender\src\main\java\org\example" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="," />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DBconnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OpenFoodApi.DBconnection" />
+      <module name="FoodRecomender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DBconnection" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -105,7 +160,10 @@
       <workItem from="1742768623119" duration="1858000" />
       <workItem from="1742770504918" duration="20993000" />
       <workItem from="1742921677245" duration="1065000" />
-      <workItem from="1742994418553" duration="4779000" />
+      <workItem from="1742994418553" duration="7931000" />
+      <workItem from="1743010702580" duration="7906000" />
+      <workItem from="1743092902263" duration="6342000" />
+      <workItem from="1743184362662" duration="11549000" />
     </task>
     <task id="LOCAL-00001" summary="Start Commit">
       <option name="closed" value="true" />
@@ -115,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742830369197</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mercadona implemented">
+      <option name="closed" value="true" />
+      <created>1743003339871</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743003339871</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +192,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -134,7 +212,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start Commit" />
+    <MESSAGE value="Mercadona implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mercadona implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
