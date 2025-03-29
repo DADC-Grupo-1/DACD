@@ -20,12 +20,12 @@ public class MAIN {
 
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException, SQLException {
 
-        /*
-        Insertar los productos en una categoría del mercadona.
+
+/*
+        ///Insertar los productos en una categoría del mercadona.
 
                 MRequest mRequest = new MRequest();
-        URL urlapi = new URL( "https://tienda.mercadona.es/api", "49173",
-                "/products/", "/categories/", "99");
+                URL urlapi = new URL("49173", "112");
         HttpRequest var = mRequest.Get(urlapi.getAPI_URL(), urlapi.getCATEGORY() + urlapi.getCATEGORY_ID());
         HttpResponse response  =  mRequest.Execute(var);
 
@@ -37,12 +37,14 @@ public class MAIN {
 
         Query query = new Query();
 
+
+
         for (int i = 0; i < category.categories.get(0).products.size(); i++) {
             var conn = mConnect.ConnectDB();
             query.InsertQuery(conn, category.categories.get(0).products.get(i));
         }
 
-         */
+
         /*
 
         Insertar un producto con su id, hay que cambiar un par de cosas para que funcione
@@ -64,7 +66,8 @@ public class MAIN {
 
         Query q = new Query();
         q.CheckElement(conn, product);
- */
+*/
+
         MRequest mRequest = new MRequest();
         URL urlapi = new URL("49173", "112");
         HttpRequest var = mRequest.Get(urlapi.getAPI_URL(), urlapi.getCATEGORY());
@@ -74,17 +77,13 @@ public class MAIN {
 
         Jsoon json = new Jsoon();
         Sections sections = json.Mercadonato_jsonSections(response);
-        System.out.println(sections.results);
+        System.out.println(sections.results.get(0).categories.get(0).name);
         ///category.getresults();
         ///System.out.println("-----------------------");
-        ///List<Integer> ListCategories = sections.getcategories();
+        List<Integer> ListCategories = sections.getcategories();
         //System.out.println(ListCategories);
         //System.out.println(ListCategories.size());
-
-
-
-
-/*
+        
         Query query = new Query();
         Connection conn = mConnect.ConnectDB();
         for (int i = 0; i<ListCategories.size(); i++) {

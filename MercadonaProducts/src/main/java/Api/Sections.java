@@ -20,11 +20,11 @@ public class Sections {
 
     public List<Integer> getcategories(){
         /*
-        TEST NO RESULT FOR
+
          */
         List<Integer> ans = new ArrayList<>();
         for (int i = 0 ; i< results.size(); i++){
-            for (int j = 0 ; j< results.get(1).categories.size(); j++){
+            for (int j = 0 ; j< results.get(i).categories.size(); j++){
                 ans.add(results.get(i).categories.get(j).id);
                 ///System.out.println(results.get(i).categories.get(j).id);
             }

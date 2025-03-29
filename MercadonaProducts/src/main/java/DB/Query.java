@@ -16,7 +16,7 @@ public class Query {
          */
         if (CheckElement(connection, product)){
             var statement =  connection.createStatement();
-            String Insert = "INSERT INTO MercadonaProducts (id, display_name, packaging, unit_price, bulk_price, reference_format) VALUES (?,?,?,?,?,?);";
+            String Insert = "INSERT INTO MercadonaProducts (id, display_name, packaging, unit_price, bulk_price, reference_format, thumbnail) VALUES (?,?,?,?,?,?,?);";
             var preparedStatement = connection.prepareStatement(Insert);
 
             preparedStatement.setString(1, product.id);
@@ -25,6 +25,7 @@ public class Query {
             preparedStatement.setString(4, product.getUnit_price());
             preparedStatement.setString(5, product.getBulk_price());
             preparedStatement.setString(6, product.getReference_format());
+            preparedStatement.setString(7, product.getThumbnail());
             preparedStatement.execute();
         };
     }

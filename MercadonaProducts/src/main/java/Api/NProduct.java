@@ -8,9 +8,11 @@ public class NProduct {
     public String id;
     public String display_name;
     public String packaging;
+    public String thumbnail;
 
     Product.PriceInstructions price_instructions;
 
+    public String getThumbnail() { return thumbnail;}
     public String getUnit_price() {
         return price_instructions.unit_price;
     }
@@ -39,7 +41,7 @@ public class NProduct {
 
     public String toString(){
         return "ID:" + id + " display_name: " + display_name + " packaging: " + packaging + " unit_price: " + getUnit_price()
-                + " bulk_price: " + getBulk_price() + " reference_format: " + getReference_format();
+                + " bulk_price: " + getBulk_price() + " reference_format: " + getReference_format() +  "thumbnail: " + getThumbnail();
     }
 
 }
