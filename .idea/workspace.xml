@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="DB INSERT NProduct">
-      <change afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Sections.java" afterDir="false" />
+    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="DB INSERT Mercadona Completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Jsoon.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Jsoon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/NProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/NProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/DB/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/DB/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Sections.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/Sections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/URL.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/Api/URL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/DBconnection.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/MAIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/MAIN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +151,7 @@
       <workItem from="1742994418553" duration="7931000" />
       <workItem from="1743010702580" duration="7906000" />
       <workItem from="1743092902263" duration="6342000" />
-      <workItem from="1743184362662" duration="19196000" />
+      <workItem from="1743184362662" duration="22572000" />
     </task>
     <task id="LOCAL-00001" summary="Start Commit">
       <option name="closed" value="true" />
@@ -177,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743258634192</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DB INSERT Mercadona Completed">
+      <option name="closed" value="true" />
+      <created>1743271693886</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743271693886</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +218,8 @@
     <MESSAGE value="Start Commit" />
     <MESSAGE value="Mercadona implemented" />
     <MESSAGE value="DB INSERT NProduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB INSERT NProduct" />
+    <MESSAGE value="DB INSERT Mercadona Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB INSERT Mercadona Completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

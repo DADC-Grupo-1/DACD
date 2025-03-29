@@ -1,19 +1,16 @@
 package Api;
 
 public class URL {
-    private String API_URL;
+    private String API_URL = "https://tienda.mercadona.es/api";
     private String PRODUCT_ID;
-    private String PRODUCT;
-    private String CATEGORY;
+    private String PRODUCT = "/products/";
+    private String CATEGORY =  "/categories/";
     private String CATEGORY_ID;
 
 
 
-    public URL(String API_URL, String PRODUCT_ID, String PRODUCT, String CATEGORY, String CATEGORY_ID) {
-        this.API_URL = API_URL;
+    public URL(String PRODUCT_ID, String CATEGORY_ID) {
         this.PRODUCT_ID = PRODUCT_ID;
-        this.PRODUCT = PRODUCT;
-        this.CATEGORY = CATEGORY;
         this.CATEGORY_ID = CATEGORY_ID;
     }
     public String getAPI_URL() {

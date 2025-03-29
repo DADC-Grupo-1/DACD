@@ -1,6 +1,9 @@
 package Api;
 
 public class NProduct {
+    /*
+    ADD THUMBNAIL
+     */
 
     public String id;
     public String display_name;

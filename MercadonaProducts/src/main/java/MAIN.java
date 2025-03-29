@@ -66,8 +66,7 @@ public class MAIN {
         q.CheckElement(conn, product);
  */
         MRequest mRequest = new MRequest();
-        URL urlapi = new URL( "https://tienda.mercadona.es/api", "49173",
-                "/products/", "/categories/", "99");
+        URL urlapi = new URL("49173", "112");
         HttpRequest var = mRequest.Get(urlapi.getAPI_URL(), urlapi.getCATEGORY());
         HttpResponse response  =  mRequest.Execute(var);
 
@@ -75,22 +74,26 @@ public class MAIN {
 
         Jsoon json = new Jsoon();
         Sections sections = json.Mercadonato_jsonSections(response);
-        System.out.println(response.body());
+        System.out.println(sections.results);
         ///category.getresults();
         ///System.out.println("-----------------------");
-        List<Integer> ListCategories = sections.getcategories();
+        ///List<Integer> ListCategories = sections.getcategories();
         //System.out.println(ListCategories);
         //System.out.println(ListCategories.size());
 
+
+
+
+/*
         Query query = new Query();
         Connection conn = mConnect.ConnectDB();
         for (int i = 0; i<ListCategories.size(); i++) {
-            urlapi = new URL( "https://tienda.mercadona.es/api", "49173",
-                    "/products/", "/categories/", String.valueOf(ListCategories.get(i)));
+                            urlapi = new URL("49173", String.valueOf(ListCategories.get(i)));
             HttpRequest Purl = mRequest.Get(urlapi.getAPI_URL(), urlapi.getCATEGORY() +  urlapi.getCATEGORY_ID());
             HttpResponse PResponse = mRequest.Execute(Purl);
 
             Category Cresponse = json.Mercadonato_json(PResponse);
+            System.out.println(PResponse.body());
             for(int j = 0; j< Cresponse.categories.get(0).products.size(); j++){
                 query.InsertQuery(conn,Cresponse.categories.get(0).products.get(j));
             }
