@@ -2,7 +2,7 @@ package Api;
 
 public class NProduct {
 
-    public int id;
+    public String id;
     public String display_name;
     public String packaging;
 

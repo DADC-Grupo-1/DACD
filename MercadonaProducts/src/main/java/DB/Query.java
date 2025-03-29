@@ -19,14 +19,13 @@ public class Query {
             String Insert = "INSERT INTO MercadonaProducts (id, display_name, packaging, unit_price, bulk_price, reference_format) VALUES (?,?,?,?,?,?);";
             var preparedStatement = connection.prepareStatement(Insert);
 
-            preparedStatement.setInt(1, product.id);
+            preparedStatement.setString(1, product.id);
             preparedStatement.setString(2, product.display_name);
             preparedStatement.setString(3, product.packaging);
             preparedStatement.setString(4, product.getUnit_price());
             preparedStatement.setString(5, product.getBulk_price());
             preparedStatement.setString(6, product.getReference_format());
             preparedStatement.execute();
-            connection.close();
         };
     }
 
@@ -38,10 +37,10 @@ public class Query {
         ///var statement =  connection.createStatement();
         String Select = "SELECT id FROM  MercadonaProducts WHERE id = (?)";
         var preparedStatement = connection.prepareStatement(Select);
-        preparedStatement.setInt(1, product.id);
+        preparedStatement.setString(1, product.id);
         var resultSet = preparedStatement.executeQuery();
 
-        if (resultSet.getInt("id") == product.id) {
+        if (resultSet.getString("id") == product.id) {
             System.out.println("The product is in the database");
             return false;
         }
