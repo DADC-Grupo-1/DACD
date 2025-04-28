@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class Sconnect {
     /*
-
+    Creates the connection and disconnection with the DB
      */
     Connection con = null;
     String db = "identifier.sqlite";
@@ -13,7 +13,9 @@ public class Sconnect {
     ///String url = "jdbc:sqlite:identifier.sqlite";
 
     public Connection ConnectDB() {
-
+        /*
+        Connects to DB
+         */
         Connection conn = null;
 
         try{
@@ -27,6 +29,9 @@ public class Sconnect {
 
 
     public void CloseDB(Connection con) {
+        /*
+        Disconnects from the DB
+         */
         try{
             if(con != null){
                 con.close();

@@ -1,6 +1,9 @@
 package Api;
 
 public class URL {
+    /*
+    Defines the API URL
+     */
     private String API_URL = "https://tienda.mercadona.es/api";
     private String PRODUCT_ID;
     private String PRODUCT = "/products/";

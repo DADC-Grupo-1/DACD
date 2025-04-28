@@ -3,14 +3,38 @@ package Api;
 import java.util.List;
 
 public class Category {
-    public int id;
-    public String name;
-    public List<Categories> categories;
+    /*
+    Defines the primary category of the JSON response
+     */
+    private int id;
+    private String name;
+    private List<Categories> categories;
+    public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public List<Categories> getCategories() {
+        return categories;
+    }
 
     public class Categories {
-        public int id;
-        public String name;
-        public List<NProduct> products;
+        /*
+        Defines the second category within the main one, where all the products must be
+        */
+        private int id;
+        private String name;
+        private List<NProduct> products;
+        public int getId() {
+            return id;
+        }
+        public String getName() {
+            return name;
+        }
+        public List<NProduct> getProducts() {
+            return products;
+        }
     }
 
     public String getcategories(){

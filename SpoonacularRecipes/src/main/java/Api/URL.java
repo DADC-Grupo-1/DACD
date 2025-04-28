@@ -1,6 +1,9 @@
 package Api;
 
 public class URL {
+    /*
+    Defines the API URL
+     */
     private String API_URL = "https://api.spoonacular.com/recipes";
     private String INGREDIENTS = "/findByIngredients";
     private String INGREDIENTS_ID;

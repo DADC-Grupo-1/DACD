@@ -17,24 +17,17 @@ public class MAIN {
         HttpRequest request= sr.Get(url.getAPIKEY(), url.getAPI_URL(), url.getRANDOM() + "?number=100");
         HttpResponse response  =  sr.Execute(request);
 
-        ///System.out.println(response.body());
         Jsoon jsoon = new Jsoon();
         GetRecipes recipe = jsoon.Spoon_json(response);
 
-        System.out.println(recipe.recipes.get(0));
+        System.out.println(recipe.getRecipes().get(0));
         Sconnect sc = new Sconnect();
         Connection conn = sc.ConnectDB();
+
         Query query = new Query();
-        for (Recipe r : recipe.recipes) {
+        for (Recipe r : recipe.getRecipes()) {
             query.InsertQuery(conn, r);
         }
-
-
-
-
-
-
-
-
+        sc.CloseDB(conn);
     }
 }

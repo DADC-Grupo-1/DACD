@@ -8,6 +8,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class SRequest {
+    /*
+    Creates and Execute the Request
+     */
 
     public HttpRequest Get (String apikey, String url, String petition) throws URISyntaxException, IOException, InterruptedException {
 
@@ -26,22 +29,3 @@ public class SRequest {
         return response;
     }
 }
-
-
-/*
-    public static void main (String [] args) throws URISyntaxException, IOException, InterruptedException {
-
-        URL urlapi = new URL( "https://tienda.mercadona.es/api", "49173",
-                "/products/", "/categories/");
-
-        MConnection mConnection = new MConnection();
-        HttpRequest var = mConnection.Get(urlapi.getAPI_URL(), urlapi.getPRODUCT() + urlapi.getPRODUCT_ID());
-        HttpResponse response  = mConnection.Execute(var);
-        System.out.println(response.body());
-
-        Gson gson = new Gson();
-        Product item = gson.fromJson((String) response.body(), Product.class);
-        System.out.println(item.toString());
-
-    }
- */

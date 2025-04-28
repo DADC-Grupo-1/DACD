@@ -11,6 +11,7 @@
     <modules>
         <module>MercadonaProducts</module>
         <module>SpoonacularRecipes</module>
+        <module>EventStoreBuilder</module>
     </modules>
 
     <properties>
@@ -51,6 +52,11 @@
                 <artifactId>sqlite-jdbc</artifactId>
                 <version>3.49.1.0</version>
             </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>6.1.6</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

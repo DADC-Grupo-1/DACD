@@ -3,6 +3,9 @@ package Api;
 import java.util.List;
 
 public class Recipe {
+    /*
+    Defines the Recipe Attributes
+     */
     private int id;
     private String title;
     private int readyInMinutes;

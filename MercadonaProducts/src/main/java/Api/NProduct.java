@@ -2,15 +2,13 @@ package Api;
 
 public class NProduct {
     /*
-    ADD THUMBNAIL
+    Used to identify the Products of the JSON response
      */
-
     public String id;
     public String display_name;
     public String packaging;
     public String thumbnail;
-
-    Product.PriceInstructions price_instructions;
+    PriceInstructions price_instructions;
 
     public String getThumbnail() { return thumbnail;}
     public String getUnit_price() {
@@ -38,7 +36,6 @@ public class NProduct {
         public String reference_format;
 
     }
-
     public String toString(){
         return "ID:" + id + " display_name: " + display_name + " packaging: " + packaging + " unit_price: " + getUnit_price()
                 + " bulk_price: " + getBulk_price() + " reference_format: " + getReference_format() +  "thumbnail: " + getThumbnail();

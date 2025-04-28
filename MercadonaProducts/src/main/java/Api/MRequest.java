@@ -8,9 +8,14 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class MRequest {
+    /*
+    Creates and Execute the Request
+     */
 
-    public HttpRequest Get (String url, String petition) throws URISyntaxException, IOException, InterruptedException {
-
+    public HttpRequest Get (String url, String petition) throws URISyntaxException{
+        /*
+        Creates the Request, method GET
+         */
         HttpRequest GET  = HttpRequest.newBuilder()
                 .uri(new URI(url.toString() + petition.toString()))
                 .GET()
@@ -19,28 +24,12 @@ public class MRequest {
         return GET;
     }
 
-    public HttpResponse Execute (HttpRequest URL) throws URISyntaxException, IOException, InterruptedException {
+    public HttpResponse Execute (HttpRequest URL) throws IOException, InterruptedException {
+        /*
+        Execute the Request, using the API URL. Returns the HttpResponse
+         */
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpResponse <String> response = httpClient.send(URL, HttpResponse.BodyHandlers.ofString());
         return response;
     }
 }
-
-
-/*
-    public static void main (String [] args) throws URISyntaxException, IOException, InterruptedException {
-
-        URL urlapi = new URL( "https://tienda.mercadona.es/api", "49173",
-                "/products/", "/categories/");
-
-        MConnection mConnection = new MConnection();
-        HttpRequest var = mConnection.Get(urlapi.getAPI_URL(), urlapi.getPRODUCT() + urlapi.getPRODUCT_ID());
-        HttpResponse response  = mConnection.Execute(var);
-        System.out.println(response.body());
-
-        Gson gson = new Gson();
-        Product item = gson.fromJson((String) response.body(), Product.class);
-        System.out.println(item.toString());
-
-    }
- */

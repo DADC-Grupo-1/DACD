@@ -1,6 +1,9 @@
 package Api;
 
 public class Ingredient {
+    /*
+    Defines the ingredient from JSON
+     */
 
     private int id;
     private String nameClean;
