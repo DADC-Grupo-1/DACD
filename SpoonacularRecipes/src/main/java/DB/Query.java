@@ -1,10 +1,11 @@
 package DB;
-
-import Api.Ingredient;
 import Api.Recipe;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Query {
     /*
@@ -52,5 +53,35 @@ public class Query {
             return false;
         }
         return true;
+    }
+
+    public List<Recipe> GetAllQuery(Connection connection) throws SQLException {
+        var statement =  connection.createStatement();
+        String Select = "SELECT * FROM SpoonacularRamdomRecipes";
+        ResultSet resultSet = statement.executeQuery(Select);
+        var meta = resultSet.getMetaData();
+
+        List<Recipe> recipes = new ArrayList<>();
+
+        while (resultSet.next()) {
+            Integer id = resultSet.getInt("id");
+            String title = resultSet.getString("title");
+            Integer readyInMinutes = resultSet.getInt("readyInMinutes");
+            Integer servings = resultSet.getInt("servings");
+            String image = resultSet.getString("image");
+            Boolean vegetarian = resultSet.getBoolean("vegetarian");
+            Boolean vegan = resultSet.getBoolean("vegan");
+            Boolean glutenFree = resultSet.getBoolean("glutenFree");
+            Boolean dairyFree = resultSet.getBoolean("dairyFree");
+            Boolean veryHealthy = resultSet.getBoolean("veryHealthy");
+            Boolean veryPopular = resultSet.getBoolean("veryPopular");
+            Boolean sustainable = resultSet.getBoolean("sustainable");
+            Float healthScore = resultSet.getFloat("healthScore");
+            String summary = resultSet.getString("summary");
+
+            Recipe recipe = new Recipe(id, title, readyInMinutes, servings, image, vegetarian, vegan, glutenFree, dairyFree, veryHealthy, veryPopular, sustainable, healthScore, summary);
+            recipes.add(recipe);
+        }
+        return(recipes);
     }
 }

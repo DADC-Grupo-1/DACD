@@ -24,12 +24,12 @@ public class MRequest {
         return GET;
     }
 
-    public HttpResponse Execute (HttpRequest URL) throws IOException, InterruptedException {
+    public HttpResponse<String> Execute (HttpRequest URL) throws IOException, InterruptedException {
         /*
         Execute the Request, using the API URL. Returns the HttpResponse
          */
-        HttpClient httpClient = HttpClient.newHttpClient();
-        HttpResponse <String> response = httpClient.send(URL, HttpResponse.BodyHandlers.ofString());
+        HttpClient client = HttpClient.newHttpClient();
+        HttpResponse<String> response = client.send(URL, HttpResponse.BodyHandlers.ofString());
         return response;
     }
 }

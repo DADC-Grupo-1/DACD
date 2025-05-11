@@ -9,25 +9,60 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class MAIN {
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException, SQLException {
-        SRequest sr = new SRequest();
-        URL url = new URL("321","123", "7722089f43bb44119b24d0cb3c6ea523");
-        HttpRequest request= sr.Get(url.getAPIKEY(), url.getAPI_URL(), url.getRANDOM() + "?number=100");
-        HttpResponse response  =  sr.Execute(request);
 
-        Jsoon jsoon = new Jsoon();
-        GetRecipes recipe = jsoon.Spoon_json(response);
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(5);
 
-        System.out.println(recipe.getRecipes().get(0));
-        Sconnect sc = new Sconnect();
-        Connection conn = sc.ConnectDB();
+        Runnable ApiRequestStore = () -> {
+            SRequest sr = new SRequest();
+            URL url = new URL("321", "123", "7722089f43bb44119b24d0cb3c6ea523");
+            HttpRequest request = null;
+            try {
+                request = sr.Get(url.getAPIKEY(), url.getAPI_URL(), url.getRANDOM() + "?number=100");
+            } catch (URISyntaxException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            HttpResponse response = null;
+            try {
+                response = sr.Execute(request);
+            } catch (URISyntaxException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
-        Query query = new Query();
-        for (Recipe r : recipe.getRecipes()) {
-            query.InsertQuery(conn, r);
-        }
-        sc.CloseDB(conn);
+            Jsoon jsoon = new Jsoon();
+            GetRecipes recipe = jsoon.Spoon_json(response);
+
+            System.out.println(recipe.getRecipes().get(0));
+            Sconnect sc = new Sconnect();
+            Connection conn = sc.ConnectDB();
+
+            Query query = new Query();
+            for (Recipe r : recipe.getRecipes()) {
+                try {
+                    query.InsertQuery(conn, r);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            sc.CloseDB(conn);
+        };
+        scheduler.scheduleAtFixedRate(ApiRequestStore, 0, 24, TimeUnit.HOURS);
+
     }
 }
+
+/// Tendría que intentar unificar la función para que todo esté más limpio, además de que también debería de
+///

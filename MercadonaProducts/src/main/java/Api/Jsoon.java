@@ -1,5 +1,6 @@
 package Api;
 
+import DB.Query;
 import com.google.gson.Gson;
 
 import java.net.http.HttpResponse;
@@ -23,5 +24,10 @@ public class Jsoon {
          */
         Gson gson = new Gson();
         return gson.fromJson(response.body(), Category.class);
+    }
+
+    public String toJson(NProduct product) {
+        Gson gson = new Gson();
+        return gson.toJson(product);
     }
 }

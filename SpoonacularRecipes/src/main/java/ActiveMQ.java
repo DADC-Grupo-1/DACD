@@ -1,7 +1,7 @@
 import Api.Jsoon;
-import Api.NProduct;
-import DB.MConnect;
+import Api.Recipe;
 import DB.Query;
+import DB.Sconnect;
 import jakarta.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -9,9 +9,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ActiveMQ {
-
     private static String url = "tcp://localhost:61616";
-    private static String subject = "MercadonaProducts";
+    private static String subject = "SpoonacularRecipes";
 
     public static void main(String[] args) throws JMSException, SQLException {
         ConnectionFactory factory = new ActiveMQConnectionFactory(url);
@@ -25,18 +24,28 @@ public class ActiveMQ {
         Destination destination = session.createTopic(subject);
         MessageProducer producer = session.createProducer(destination);
 
-        MConnect mConnect = new MConnect();
+        Sconnect sconnect = new Sconnect();
         Query query = new Query();
         Jsoon jsoon = new Jsoon();
 
-        java.sql.Connection conn = mConnect.ConnectDB();
-        List<NProduct> products = query.GetAllQuery(conn);
+        java.sql.Connection conn = sconnect.ConnectDB();
+        List<Recipe> recipes = query.GetAllQuery(conn);
 
-        for (NProduct product : products) {
-            TextMessage message = session.createTextMessage(jsoon.toJson(product));
+        for (Recipe recipe : recipes) {
+            TextMessage message = session.createTextMessage(jsoon.toJson(recipe));
             producer.send(message);
         }
+
+
+
 
         connection.close();
     }
 }
+
+/*
+Maneras de las que puedo obtimizar el código
+- Puedo hacer que la función de guardar la información en un fichero sea unificada y sea válida para las dos opciones
+- Obtimizar la base de datos para que contenga información necesaria
+- Implementar más el código limpio
+ */

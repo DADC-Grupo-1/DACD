@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-03-29.20:48:24</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-05-09.18:37:47</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1597,7 +1597,7 @@
     </table>
     <column id="558" parent="555" name="id">
       <Position>1</Position>
-      <StoredType>int PRYMARY KEY|0s</StoredType>
+      <StoredType>INTEGER|0s</StoredType>
     </column>
     <column id="559" parent="555" name="display_name">
       <Position>2</Position>
@@ -1621,7 +1621,7 @@
     </column>
     <column id="564" parent="555" name="thumbnail">
       <Position>7</Position>
-      <StoredType>integer|0s</StoredType>
+      <StoredType>INTEGER|0s</StoredType>
     </column>
     <column id="565" parent="556" name="id">
       <Position>1</Position>

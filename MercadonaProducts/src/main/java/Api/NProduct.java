@@ -30,15 +30,28 @@ public class NProduct {
         price_instructions.unit_price = unit_price;
     }
 
-    public class PriceInstructions {
+    public static class PriceInstructions {
         public String unit_price;
         public String bulk_price;
         public String reference_format;
 
+        public PriceInstructions(String unit_price, String bulk_price, String reference_format) {
+            this.unit_price = unit_price;
+            this.bulk_price = bulk_price;
+            this.reference_format = reference_format;
+        }
     }
     public String toString(){
         return "ID:" + id + " display_name: " + display_name + " packaging: " + packaging + " unit_price: " + getUnit_price()
                 + " bulk_price: " + getBulk_price() + " reference_format: " + getReference_format() +  "thumbnail: " + getThumbnail();
+    }
+
+    public NProduct( String id, String display_name, String packaging, String thumbnail, PriceInstructions price_instructions ) {
+        this.id = id;
+        this.display_name = display_name;
+        this.packaging = packaging;
+        this.thumbnail = thumbnail;
+        this.price_instructions = price_instructions;
     }
 
 }

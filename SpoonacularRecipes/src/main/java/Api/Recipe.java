@@ -3,9 +3,26 @@ package Api;
 import java.util.List;
 
 public class Recipe {
+    public Recipe(int id, String title, int readyInMinutes, int servings, String image, boolean vegetarian, boolean vegan, boolean glutenFree, boolean dairyFree, boolean veryHealthy, boolean veryPopular, boolean sustainable, double healthScore, String summary) {
+        this.id = id;
+        this.title = title;
+        this.readyInMinutes = readyInMinutes;
+        this.servings = servings;
+        this.image = image;
+        this.vegetarian = vegetarian;
+        this.vegan = vegan;
+        this.glutenFree = glutenFree;
+        this.dairyFree = dairyFree;
+        this.veryHealthy = veryHealthy;
+        this.veryPopular = veryPopular;
+        this.sustainable = sustainable;
+        this.healthScore = healthScore;
+        this.summary = summary;
+    }
+
     /*
-    Defines the Recipe Attributes
-     */
+        Defines the Recipe Attributes
+         */
     private int id;
     private String title;
     private int readyInMinutes;

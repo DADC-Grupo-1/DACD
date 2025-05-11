@@ -9,6 +9,7 @@ public class Category {
     private int id;
     private String name;
     private List<Categories> categories;
+
     public int getId() {
         return id;
     }

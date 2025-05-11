@@ -2,10 +2,9 @@ package DB;
 
 import Api.NProduct;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Query {
     /*
@@ -17,6 +16,7 @@ public class Query {
         Creates the INSERT Query
          */
         if (CheckElement(connection, product)){
+            try {
             var statement =  connection.createStatement();
             String Insert = "INSERT INTO MercadonaProducts (id, display_name, packaging, unit_price, bulk_price, reference_format, thumbnail) VALUES (?,?,?,?,?,?,?);";
             var preparedStatement = connection.prepareStatement(Insert);
@@ -29,6 +29,13 @@ public class Query {
             preparedStatement.setString(6, product.getReference_format());
             preparedStatement.setString(7, product.getThumbnail());
             preparedStatement.execute();
+            } catch (org.sqlite.SQLiteException e) {
+                if(e.getMessage().contains("PRIMARY KEY")){
+                    System.out.println("Insert failed (primary key already exists)");
+                } else {
+                    throw e;
+                }
+            }
         };
     }
 
@@ -47,5 +54,36 @@ public class Query {
             return false;
         }
         return true;
+    }
+
+    public List<NProduct> GetAllQuery(Connection connection) throws SQLException {
+        var statement =  connection.createStatement();
+        String Select = "SELECT * FROM MercadonaProducts";
+        ResultSet resultSet = statement.executeQuery(Select);
+        var meta = resultSet.getMetaData();
+
+        List<NProduct> products = new ArrayList<>();
+
+        while (resultSet.next()) {
+            String id = resultSet.getString("id");
+            String display_name = resultSet.getString("display_name");
+            String packaging = resultSet.getString("packaging");
+            String thumbnail = resultSet.getString("thumbnail");
+            String unit_price = resultSet.getString("unit_price");
+            String bulk_price = resultSet.getString("bulk_price");
+            String reference_format = resultSet.getString("reference_format");
+
+
+            NProduct producto = new NProduct(id, display_name, packaging, thumbnail, new NProduct.PriceInstructions(unit_price, bulk_price, reference_format));
+            products.add(producto);
+        }
+        return(products);
+    }
+
+    public void ClearDB(Connection connection) throws SQLException {
+        String Delete = "DELETE FROM MercadonaProducts";
+        var statement =  connection.createStatement();
+        statement.executeUpdate(Delete);
+        System.out.println("DB Clear");
     }
 }

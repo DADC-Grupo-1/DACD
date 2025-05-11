@@ -13,4 +13,9 @@ public class Jsoon {
         Gson gson = new Gson();
         return gson.fromJson(response.body(), GetRecipes.class);
     }
+
+    public String toJson(Recipe recipe) {
+        Gson gson = new Gson();
+        return gson.toJson(recipe);
+    }
 }
