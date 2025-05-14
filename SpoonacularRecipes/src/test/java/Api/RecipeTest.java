@@ -13,7 +13,7 @@ public class RecipeTest extends TestCase {
     }
 
     SRequest sr = new SRequest();
-    URL url = new URL("321","123", "7722089f43bb44119b24d0cb3c6ea523");
+    URL url = new URL("321", "7722089f43bb44119b24d0cb3c6ea523");
     HttpRequest request= sr.Get(url.getAPIKEY(), url.getAPI_URL(), url.getRANDOM() + "?number=1");
     HttpResponse response  =  sr.Execute(request);
 

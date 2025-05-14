@@ -29,16 +29,12 @@ public class ActiveMQ {
         Jsoon jsoon = new Jsoon();
 
         java.sql.Connection conn = sconnect.ConnectDB();
-        List<Recipe> recipes = query.GetAllQuery(conn);
+        List<Recipe> recipes = query.GetAllRecipes(conn);
 
         for (Recipe recipe : recipes) {
             TextMessage message = session.createTextMessage(jsoon.toJson(recipe));
             producer.send(message);
         }
-
-
-
-
         connection.close();
     }
 }

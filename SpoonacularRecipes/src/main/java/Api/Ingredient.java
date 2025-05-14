@@ -1,40 +1,42 @@
 package Api;
 
+import java.util.List;
+
 public class Ingredient {
     /*
     Defines the ingredient from JSON
      */
 
+
     private int id;
     private String nameClean;
     private String amount;
     private String unit;
-    private Measures measures;
+    private List<String> meta;
+    private String meta_String;
+    /*
+    private extendedIngredients extendedIngredients;
+    public class extendedIngredients{
 
-    public class Measures {
-        public metrics us;
-        public metrics metric;
     }
-
-    public class metrics{
-        public double amount;
-        public String unitShort;
-        public String unitLong;
-    }
+     */
 
     public int getId() {
-        return id;
-    }
+        return id;}
     public String getNameClean() {
-        return nameClean;
-    }
+        return nameClean;}
     public String getAmount() {
-        return amount;
-    }
+        return amount;}
     public String getUnit() {
-        return unit;
-    }
-    public Measures getMeasures() {
-        return measures;
+        return unit;}
+    public List<String> getMeta() {
+        return meta;}
+
+    public Ingredient(int id, String nameClean, String amount, String unit, String meta_String) {
+        this.id = id;
+        this.nameClean = nameClean;
+        this.amount = amount;
+        this.unit = unit;
+        this.meta_String = meta_String;
     }
 }

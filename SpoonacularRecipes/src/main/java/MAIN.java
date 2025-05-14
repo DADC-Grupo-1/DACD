@@ -15,15 +15,14 @@ import java.util.concurrent.TimeUnit;
 
 public class MAIN {
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException, SQLException {
-
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(5);
 
-        Runnable ApiRequestStore = () -> {
+       /// Runnable ApiRequestStore = () -> {
             SRequest sr = new SRequest();
-            URL url = new URL("321", "123", "7722089f43bb44119b24d0cb3c6ea523");
+            URL url = new URL("321", "7722089f43bb44119b24d0cb3c6ea523");
             HttpRequest request = null;
             try {
-                request = sr.Get(url.getAPIKEY(), url.getAPI_URL(), url.getRANDOM() + "?number=100");
+                request = sr.Get(url.getAPIKEY(), url.getAPI_URL(), url.getRANDOM() + "?number=50");
             } catch (URISyntaxException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
@@ -52,17 +51,18 @@ public class MAIN {
             Query query = new Query();
             for (Recipe r : recipe.getRecipes()) {
                 try {
-                    query.InsertQuery(conn, r);
+                    query.InsertQueryRecipe(conn, r);
+                    for (int i = 0; i < r.getextendedIngredients().size(); i++) {
+                        System.out.println("Inserting Ingredient");
+                        query.InsertQueryIngredient(conn, r.getextendedIngredients().get(i), r.getId());
+                    }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             }
             sc.CloseDB(conn);
-        };
-        scheduler.scheduleAtFixedRate(ApiRequestStore, 0, 24, TimeUnit.HOURS);
+        ///};
+        ///scheduler.scheduleAtFixedRate(ApiRequestStore, 0, 24, TimeUnit.HOURS);
 
     }
 }
-
-/// Tendría que intentar unificar la función para que todo esté más limpio, además de que también debería de
-///

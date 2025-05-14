@@ -3,7 +3,7 @@ package Api;
 import java.util.List;
 
 public class Recipe {
-    public Recipe(int id, String title, int readyInMinutes, int servings, String image, boolean vegetarian, boolean vegan, boolean glutenFree, boolean dairyFree, boolean veryHealthy, boolean veryPopular, boolean sustainable, double healthScore, String summary) {
+    public Recipe(int id, String title, int readyInMinutes, int servings, String image, boolean vegetarian, boolean vegan, boolean glutenFree, boolean dairyFree, boolean veryHealthy, boolean veryPopular, boolean sustainable, double healthScore, String summary,List<Ingredient> extendedIngredients) {
         this.id = id;
         this.title = title;
         this.readyInMinutes = readyInMinutes;
@@ -18,6 +18,7 @@ public class Recipe {
         this.sustainable = sustainable;
         this.healthScore = healthScore;
         this.summary = summary;
+        this.extendedIngredients = extendedIngredients;
     }
 
     /*
