@@ -1,19 +1,13 @@
 package DB;
 
 import Api.Category;
-import Api.Jsoon;
-import Api.MRequest;
-import Api.URL;
-import org.junit.jupiter.api.Test;
+import control.Jsoon;
+import control.MRequest;
+import model.URL;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.sql.Connection;
-import java.sql.SQLException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class QueryTest {
 

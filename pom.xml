@@ -12,7 +12,8 @@
         <module>MercadonaProducts</module>
         <module>SpoonacularRecipes</module>
         <module>EventStoreBuilder</module>
-        <module>App</module>
+        <module>Business Unit</module>
+        <module>Business Unit</module>
     </modules>
 
     <properties>

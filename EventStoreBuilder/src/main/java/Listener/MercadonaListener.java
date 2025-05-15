@@ -1,15 +1,21 @@
 package Listener;
 
+import com.google.gson.Gson;
 import jakarta.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class MercadonaListener {
     private static String url = "tcp://localhost:61616";
     private static String subjectM = "MercadonaProducts";
     SafeInFile file = new SafeInFile();
+
+    private static final Map<String, String> safeProducts = new ConcurrentHashMap<>();
+
 
     public void StoreProduts (String path, String actualdate) throws JMSException, IOException {
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
@@ -18,8 +24,8 @@ public class MercadonaListener {
         connection.start();
 
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        Destination destination = session.createTopic(subjectM);
-        MessageConsumer consumer = session.createConsumer(destination);
+        Topic destination = session.createTopic(subjectM);
+        MessageConsumer consumer = session.createDurableSubscriber(destination,"EventStoreBuilder"); //
 
         File directorio = new File(path);
         if (!directorio.exists()) {

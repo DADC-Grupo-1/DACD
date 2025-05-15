@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class MAIN {
-    public static void main(String[] args) throws JMSException, IOException {
+    public static void main(String[] args) throws JMSException, IOException, InterruptedException {
 
         MercadonaListener mercadonaListener = new MercadonaListener();
         SpoonacularListener spoonacularListener = new SpoonacularListener();
