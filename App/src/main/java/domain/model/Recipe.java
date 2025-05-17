@@ -1,11 +1,9 @@
-package Schemas;
-
-import Schemas.Ingredient;
+package domain.model;
 
 import java.util.List;
 
 public class Recipe {
-    public Recipe(int id, String title, int readyInMinutes, int servings, String image, boolean vegetarian, boolean vegan, boolean glutenFree, boolean dairyFree, boolean veryHealthy, boolean veryPopular, boolean sustainable, double healthScore, String summary,List<Ingredient> extendedIngredients) {
+    public Recipe(String  id, String title, int readyInMinutes, int servings, String image, boolean vegetarian, boolean vegan, boolean glutenFree, boolean dairyFree, boolean veryHealthy, boolean veryPopular, boolean sustainable, double healthScore, String summary,String extendedIngredients_Str) {
         this.id = id;
         this.title = title;
         this.readyInMinutes = readyInMinutes;
@@ -20,13 +18,13 @@ public class Recipe {
         this.sustainable = sustainable;
         this.healthScore = healthScore;
         this.summary = summary;
-        this.extendedIngredients = extendedIngredients;
+        this.extendedIngredients_Str = extendedIngredients_Str;
     }
 
     /*
         Defines the Recipe Attributes
          */
-    private int id;
+    private String  id;
     private String title;
     private int readyInMinutes;
     private int servings;
@@ -40,10 +38,11 @@ public class Recipe {
     private boolean sustainable;
     private double healthScore;
     private String summary;
+    private String extendedIngredients_Str;
     private List<Ingredient> extendedIngredients;
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
     public String getTitle() {
@@ -87,5 +86,8 @@ public class Recipe {
     }
     public List<Ingredient> getextendedIngredients() {
         return extendedIngredients;
+    }
+    public String getextendedIngredients_Str() {
+        return extendedIngredients_Str;
     }
 }
