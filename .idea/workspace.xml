@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="1 Endpoint DB up">
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/domain/model/Step.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/domain/in/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/domain/in/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/domain/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/domain/model/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/insfrastructure/store/FromEventStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/insfrastructure/store/FromEventStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/insfrastructure/store/Query.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MercadonaProducts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/ActiveMQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/ActiveMQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/GetProduts.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/GetProduts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
-    </list>
+    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="END" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -285,7 +272,7 @@
       <workItem from="1747323044727" duration="8046000" />
       <workItem from="1747332316908" duration="18568000" />
       <workItem from="1747485075054" duration="30180000" />
-      <workItem from="1747602584199" duration="1303000" />
+      <workItem from="1747602584199" duration="1548000" />
     </task>
     <task id="LOCAL-00001" summary="Start Commit">
       <option name="closed" value="true" />
@@ -375,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747481252931</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="END">
+      <option name="closed" value="true" />
+      <created>1747604048394</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747604048394</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +412,8 @@
     <MESSAGE value="Everything Working as it should." />
     <MESSAGE value="Cambio No SQL hecho (No percistencia en ActimeMQ)" />
     <MESSAGE value="1 Endpoint DB up" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 Endpoint DB up" />
+    <MESSAGE value="END" />
+    <option name="LAST_COMMIT_MESSAGE" value="END" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
