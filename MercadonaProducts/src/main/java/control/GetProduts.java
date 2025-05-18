@@ -1,5 +1,6 @@
 package control;
 
+import com.google.gson.JsonParser;
 import model.URL;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -13,6 +14,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GetProduts {
     private static final Logger log = LoggerFactory.getLogger(GetProduts.class);
@@ -37,6 +39,11 @@ public class GetProduts {
         return ids;
     }
 
+    public  String traducirProducto(String jsonOriginal, String traduccion) {
+        JsonObject json = JsonParser.parseString(jsonOriginal).getAsJsonObject();
+        json.addProperty("producto", traduccion);
+        return json.get("producto").getAsString();}
+
     public  List<JsonObject> GetAllProducts(URL url, List<Integer> ids) throws URISyntaxException, IOException, InterruptedException {
         MRequest mRequest = new MRequest();
         Gson gson = new Gson();
@@ -52,9 +59,21 @@ public class GetProduts {
                 for (int k = 0; k < jsonProducts.size(); k++) {
                     JsonObject product = jsonProducts.get(k).getAsJsonObject();
                     products.add(product);
+
                 }
             }
         }
         return products;
     }
+
+    public static void main(String[] args) throws Exception {
+        /*
+        URL url = new URL();
+        GetProduts g = new GetProduts();
+        Translate  t = new Translate();
+        List<Integer> ids = List.of(27);
+        System.out.println(g.GetAllProducts(url,ids));
+
+         */
     }
+}

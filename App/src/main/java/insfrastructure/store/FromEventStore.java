@@ -5,13 +5,17 @@ import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PipedReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -48,12 +52,13 @@ public class FromEventStore {
         };
     }
 
-    public static void RecipestoDB(Connection conn, Recipe recipe, String Ingredients) throws SQLException {
+    public static void RecipestoDB(Connection conn, Recipe recipe, String Ingredients, List<String> steps) throws SQLException {
+        String StepsString = String.join("| ", steps);
         var statement =  conn.createStatement();
-        String CreateTablaIfNotExists = "CREATE TABLE IF NOT EXISTS Recipes (id INT,name TEXT,readyInMinutes INT,servings INT, image TEXT,vegetarian INT,vegan INT,glutenFree INT,dairyFree INT,veryHealthy INT,veryPopular INT,sustainable INT,healthScore REAL,summary TEXT,extendedIngredients TEXT)";
+        String CreateTablaIfNotExists = "CREATE TABLE IF NOT EXISTS Recipes (id INT,name TEXT,readyInMinutes INT,servings INT, image TEXT,vegetarian INT,vegan INT,glutenFree INT,dairyFree INT,healthScore REAL,summary TEXT,extendedIngredients TEXT, instructions TEXT);)";
         statement.execute(CreateTablaIfNotExists);
 
-        String Insert =  "INSERT INTO Recipes (id,name ,readyInMinutes ,servings, image,vegetarian,vegan,glutenFree ,dairyFree ,veryHealthy ,veryPopular ,sustainable ,healthScore ,summary ,extendedIngredients) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String Insert =  "INSERT INTO Recipes (id,name ,readyInMinutes ,servings, image,vegetarian,vegan,glutenFree ,dairyFree ,healthScore ,summary ,extendedIngredients,instructions) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         var preparedStatement =  conn.prepareStatement(Insert);
 
         preparedStatement.setString(1, recipe.getId());
@@ -65,12 +70,10 @@ public class FromEventStore {
         preparedStatement.setInt(7, recipe.isVegan() ? 1 : 0);
         preparedStatement.setInt(8, recipe.isGlutenFree() ? 1 : 0);
         preparedStatement.setInt(9, recipe.isDairyFree() ? 1 : 0);
-        preparedStatement.setInt(10,recipe.isVeryHealthy() ? 1 : 0);
-        preparedStatement.setInt(11, recipe.isVeryPopular() ? 1 : 0);
-        preparedStatement.setInt(12, recipe.isSustainable() ? 1 : 0);
-        preparedStatement.setDouble(13, recipe.getHealthScore());
-        preparedStatement.setString(14, recipe.getSummary());
-        preparedStatement.setString(15, Ingredients);
+        preparedStatement.setDouble(10, recipe.getHealthScore());
+        preparedStatement.setString(11, recipe.getSummary());
+        preparedStatement.setString(12, Ingredients);
+        preparedStatement.setString(13, StepsString);
         preparedStatement.execute();
 
     }
@@ -91,10 +94,30 @@ public class FromEventStore {
         return true;
     }
 
-    public static void main(String[] args) throws IOException, SQLException {
-
+    public static void RunMercadona() throws IOException, SQLException {
         Connect connect = new Connect();
+        Translate translate = new Translate();
+        DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
+        String today = LocalDate.now().format(yyyyMMdd);
+        Gson gson = new Gson();
 
+        BufferedReader reader = new BufferedReader(new FileReader(pathm + "/20250515" + ".events"));
+        String linea;
+
+        Connection conn = connect.ConnectDB();
+
+        while ((linea = reader.readLine()) != null) {
+            Product product = gson.fromJson(linea, Product.class);
+            JsonObject Jsonproduct = (gson.fromJson(linea, JsonObject.class)).getAsJsonObject("price_instructions");
+            Product.PriceInstructions price_instructions = gson.fromJson(Jsonproduct, Product.PriceInstructions.class);
+            MercadonaProductstoDB(conn, product, price_instructions);
+        }
+        conn.close();
+    }
+
+    public static void RunRecipe() throws IOException, SQLException {
+        Connect connect = new Connect();
+        Translate translate = new Translate();
         DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
         String today = LocalDate.now().format(yyyyMMdd);
         Gson gson = new Gson();
@@ -106,7 +129,62 @@ public class FromEventStore {
         while ((linea = reader.readLine()) != null) {
             Recipe recipe = gson.fromJson(linea, Recipe.class);
             JsonArray JsonIngredients = (gson.fromJson(linea, JsonObject.class)).getAsJsonArray("extendedIngredients");
-            RecipestoDB(conn, recipe, String.valueOf(JsonIngredients));
+            for (int i = 0; i < JsonIngredients.size(); i++) {
+                String EnglishNameClean = JsonIngredients.get(i).getAsJsonObject().get("nameClean").getAsString();
+                String SpanishNameClean = translate.traducirPalabra(EnglishNameClean);
+                JsonIngredients.get(i).getAsJsonObject().addProperty("nameClean", SpanishNameClean);
+                Double unit_price = obtenerPrecioMaximoPorPalabras(SpanishNameClean);
+                JsonIngredients.get(i).getAsJsonObject().addProperty("price", unit_price);
+
+
+            }
+            JsonArray JsonInstructions = (gson.fromJson(linea, JsonObject.class)).getAsJsonArray("analyzedInstructions");
+            JsonArray JsonSteps = JsonInstructions.get(0).getAsJsonObject().getAsJsonArray("steps");
+
+
+
+            List<String> steps = new ArrayList<>();
+            for (JsonElement JsonElement : JsonSteps) {
+                steps.add(JsonElement.getAsJsonObject().get("step").getAsString());
+            }
+            RecipestoDB(conn, recipe, String.valueOf(JsonIngredients), steps);
+        }
+        conn.close();
+    }
+
+
+    public static Double obtenerPrecioMaximoPorPalabras(String texto) throws SQLException {
+        String[] palabras = texto.split("\\s+");
+        StringBuilder sql = new StringBuilder("SELECT MIN(unit_price) AS precio_maximo FROM Products WHERE ");
+        Connect connect = new Connect();
+        Connection conn = connect.ConnectDB();
+
+        for (int i = 0; i < palabras.length; i++) {
+            sql.append("name LIKE ?");
+            if (i < palabras.length - 1) {
+                sql.append(" OR ");
+            }
+        }
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql.toString())) {
+            for (int i = 0; i < palabras.length; i++) {
+                stmt.setString(i + 1, "%" + palabras[i] + "%");
+            }
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getDouble("precio_maximo"); // Devuelve 0.0 si no hay resultados
+                }
+            }
+        }
+
+        return null; // No coincidencias
+    }
+
+    public static void main(String[] args) throws IOException, SQLException {
+        RunRecipe();
+
+            //System.out.println(JsonSteps);
         }
 /*
         String Select  =  "SELECT * FROM Recipes WHERE id = (?)";
@@ -122,7 +200,7 @@ public class FromEventStore {
         }
  */
     }
-}
+
 
 /*
 

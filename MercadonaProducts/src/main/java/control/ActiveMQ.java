@@ -26,8 +26,6 @@ public class ActiveMQ {
         Destination destination = session.createTopic(subject);
         MessageProducer producer = session.createProducer(destination);
         producer.setDeliveryMode(DeliveryMode.PERSISTENT);
-        //List<Integer> ids =  t.GetAllCategoriesID(urlapi);
-        List<Integer> id = List.of(27);
         List<JsonObject> products = task.GetAllProducts(url_api, ListOfCategoriesids);
         for (JsonObject product : products) {
             TextMessage message = session.createTextMessage(product.toString());

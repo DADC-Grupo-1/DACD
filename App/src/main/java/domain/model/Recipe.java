@@ -42,6 +42,10 @@ public class Recipe {
     private List<Ingredient> extendedIngredients;
 
 
+
+    private List<String> steps;
+
+
     public String getId() {
         return id;
     }
@@ -87,7 +91,6 @@ public class Recipe {
     public List<Ingredient> getextendedIngredients() {
         return extendedIngredients;
     }
-    public String getextendedIngredients_Str() {
-        return extendedIngredients_Str;
-    }
+    public String getextendedIngredients_Str() {return extendedIngredients_Str;}
+    public List<String> getSteps() {return steps;}
 }
