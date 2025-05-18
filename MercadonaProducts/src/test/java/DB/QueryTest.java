@@ -1,7 +1,6 @@
 package DB;
 
 import Api.Category;
-import control.Jsoon;
 import control.MRequest;
 import model.URL;
 

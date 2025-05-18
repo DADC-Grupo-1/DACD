@@ -4,7 +4,100 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="END" />
+    <list default="true" id="a8b41b56-1e15-40e8-8eb0-53e9983fc3f9" name="Changes" comment="END">
+      <change afterPath="$PROJECT_DIR$/App/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/app/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/app/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/app/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/app/recipes/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/dietary-filter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/recipe-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/theme-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/accordion.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/alert-dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/alert.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/aspect-ratio.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/avatar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/badge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/breadcrumb.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/calendar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/carousel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/chart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/checkbox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/collapsible.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/command.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/context-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/drawer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/hover-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/input-otp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/label.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/menubar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/navigation-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/pagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/popover.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/progress.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/radio-group.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/resizable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/scroll-area.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/select.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/separator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/sheet.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/skeleton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/slider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/sonner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/switch.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/tabs.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/textarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/toast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/toaster.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/toggle-group.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/toggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/tooltip.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/use-mobile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/components/ui/use-toast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/hooks/use-mobile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/hooks/use-toast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/lib/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/lib/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/next.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/pnpm-lock.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/postcss.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/public/placeholder-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/public/placeholder-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/public/placeholder-user.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/public/placeholder.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/public/placeholder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/styles/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/tailwind.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/insfrastructure/store/Translate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/domain/in/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/domain/in/RecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/domain/model/Step.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/insfrastructure/store/FromEventStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/insfrastructure/store/FromEventStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/MAIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/MAIN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/GetProduts.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/GetProduts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/main/java/control/Jsoon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/test/java/Api/CategoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MercadonaProducts/src/test/java/DB/QueryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MercadonaProducts/src/test/java/DB/QueryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpoonacularRecipes/src/main/java/control/activeMQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpoonacularRecipes/src/main/java/control/activeMQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpoonacularRecipes/src/main/java/control/getrecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpoonacularRecipes/src/main/java/control/getrecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +126,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/DADC-Grupo-1/DACD.git&quot;,
-    &quot;accountId&quot;: &quot;9b11e0f8-044d-47a7-bc89-76a716502aed&quot;
+    &quot;accountId&quot;: &quot;c8c31e8d-6c26-48a0-9822-16d0baacca0a&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -47,63 +140,62 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2udOGcx0sKghQbXB7qoMf2pquw0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ActiveMQ.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ApiConnection.executor&quot;: &quot;Run&quot;,
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DBconnection.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FromEventStore.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GetIngredients.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GetProduts.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MAIN.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MConnection.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProductController.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RecipeController.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TEST.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Translate.executor&quot;: &quot;Run&quot;,
-    &quot;Application.control.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in MercadonaProducts.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MConnectTest.connect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MRequestTest.getRequest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RecipeTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jesus/IdeaProjects/DACD/App/src/main/java/Backend/Schemas&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Usuario/IdeaProjects/FoodRecomender/src/main/java/org/foorecomender/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\jesus\\IdeaProjects\\DACD\\App\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ActiveMQ.executor": "Run",
+    "Application.ApiConnection.executor": "Run",
+    "Application.App.executor": "Run",
+    "Application.DBconnection.executor": "Run",
+    "Application.FromEventStore.executor": "Run",
+    "Application.GetIngredients.executor": "Run",
+    "Application.GetProduts.executor": "Run",
+    "Application.MAIN.executor": "Run",
+    "Application.MConnection.executor": "Run",
+    "Application.Principal.executor": "Run",
+    "Application.ProductController.executor": "Run",
+    "Application.RecipeController.executor": "Run",
+    "Application.TEST.executor": "Run",
+    "Application.Translate.executor": "Run",
+    "Application.control.executor": "Run",
+    "JUnit.All in MercadonaProducts.executor": "Run",
+    "JUnit.MConnectTest.connect.executor": "Run",
+    "JUnit.MRequestTest.getRequest.executor": "Run",
+    "JUnit.RecipeTest.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jesus/IdeaProjects/DACD/App/src/main/java/Backend/Schemas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Usuario/IdeaProjects/FoodRecomender/src/main/java/org/foorecomender/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "ts.external.directory.path": "C:\\Users\\hugoa\\IdeaProjects\\FoodRecomender\\App\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="OpenFoodApi" />
@@ -224,8 +316,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
@@ -273,6 +365,8 @@
       <workItem from="1747332316908" duration="18568000" />
       <workItem from="1747485075054" duration="30180000" />
       <workItem from="1747602584199" duration="1548000" />
+      <workItem from="1747600761249" duration="1656000" />
+      <workItem from="1747602429148" duration="1522000" />
     </task>
     <task id="LOCAL-00001" summary="Start Commit">
       <option name="closed" value="true" />

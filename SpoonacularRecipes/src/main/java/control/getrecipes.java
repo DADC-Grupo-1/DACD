@@ -16,11 +16,7 @@ public class getrecipes {
         srequest sRequest = new srequest();
         jsoon jsoon = new jsoon();
         List<JsonObject> listOfRecipes = new ArrayList<>();
-/*
-        HttpRequest request = sRequest.Get(url.getAPIKEY(), url.getAPI_URL(),url.getRANDOM() + "?number=5");
-        HttpResponse response = sRequest.Execute(request);
 
- */
         JsonArray jsonRecipes = jsoon.getRecipes(response);
         for (int i = 0; i < jsonRecipes.size(); i++) {
             listOfRecipes.add(jsonRecipes.get(i).getAsJsonObject());

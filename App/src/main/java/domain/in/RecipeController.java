@@ -45,10 +45,7 @@ public class RecipeController {
             dietary.addProperty("dairyFree", rs.getString("dairyFree"));
 
             JsonArray instructions = new JsonArray();
-
-
             recipe.add("dietary", dietary);
-            ///recipe.add("instructions", instructions);
         }
         return recipe;
     }
@@ -96,9 +93,5 @@ public class RecipeController {
 
         ctx.contentType("application/json");
         ctx.result(recipes.toString());
-    }
-
-
-    public static void main(String[] args) {
     }
 }

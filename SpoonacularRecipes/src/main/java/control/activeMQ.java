@@ -28,9 +28,3 @@ public class activeMQ {
         connection.close();
     }
     }
-/*
-Maneras de las que puedo obtimizar el código
-- Puedo hacer que la función de guardar la información en un fichero sea unificada y sea válida para las dos opciones
-- Obtimizar la base de datos para que contenga información necesaria
-- Implementar más el código limpio
- */

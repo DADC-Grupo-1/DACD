@@ -65,15 +65,4 @@ public class GetProduts {
         }
         return products;
     }
-
-    public static void main(String[] args) throws Exception {
-        /*
-        URL url = new URL();
-        GetProduts g = new GetProduts();
-        Translate  t = new Translate();
-        List<Integer> ids = List.of(27);
-        System.out.println(g.GetAllProducts(url,ids));
-
-         */
-    }
 }

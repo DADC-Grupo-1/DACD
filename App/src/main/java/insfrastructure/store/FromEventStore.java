@@ -25,9 +25,6 @@ import domain.model.Product;
 import domain.model.Recipe;
 
 public class FromEventStore {
-    /*
-    Primero prubo con uno y después debo de unificarlo para usarlo con los dos
-     */
     static String pathm  ="eventstore/Mercadona/MercadonaApi/";
     static String paths  ="eventstore/Spoonacular/SpoonacularApi";
 
@@ -96,12 +93,11 @@ public class FromEventStore {
 
     public static void RunMercadona() throws IOException, SQLException {
         Connect connect = new Connect();
-        Translate translate = new Translate();
         DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
         String today = LocalDate.now().format(yyyyMMdd);
         Gson gson = new Gson();
 
-        BufferedReader reader = new BufferedReader(new FileReader(pathm + "/20250515" + ".events"));
+        BufferedReader reader = new BufferedReader(new FileReader(pathm  + "/" +  today + ".events"));
         String linea;
 
         Connection conn = connect.ConnectDB();
@@ -121,7 +117,7 @@ public class FromEventStore {
         DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
         String today = LocalDate.now().format(yyyyMMdd);
         Gson gson = new Gson();
-        BufferedReader reader = new BufferedReader(new FileReader(paths + "/20250515" + ".events"));
+        BufferedReader reader = new BufferedReader(new FileReader(paths + "/" + today+ ".events"));
         String linea;
 
         Connection conn = connect.ConnectDB();
@@ -173,54 +169,15 @@ public class FromEventStore {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    return rs.getDouble("precio_maximo"); // Devuelve 0.0 si no hay resultados
+                    return rs.getDouble("precio_maximo");
                 }
             }
         }
 
-        return null; // No coincidencias
+        return null;
     }
-
     public static void main(String[] args) throws IOException, SQLException {
+        RunMercadona();
         RunRecipe();
-
-            //System.out.println(JsonSteps);
         }
-/*
-        String Select  =  "SELECT * FROM Recipes WHERE id = (?)";
-        var preparedStatement = conn.prepareStatement(Select);
-        preparedStatement.setString(1, "664636");
-        ResultSet resultSet = preparedStatement.executeQuery();
-
-        JsonArray Ingredients = gson.fromJson(resultSet.getString("extendedIngredients"), JsonArray.class);
-
-        for (JsonElement ingredient : Ingredients) {
-            Ingredient ing = gson.fromJson(ingredient, Ingredient.class);
-            System.out.println(ing.getNameClean());
-        }
- */
     }
-
-
-/*
-
-Mercadona
-        Connect connect = new Connect();
-
-        DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
-        String today = LocalDate.now().format(yyyyMMdd);
-        Gson gson = new Gson();
-        BufferedReader reader = new BufferedReader(new FileReader(paths + today + ".events"));
-        String linea;
-
-        Connection conn = connect.ConnectDB();
-
-        while ((linea = reader.readLine()) != null) {
-            Product product = gson.fromJson(linea, Product.class);
-            JsonObject Jsonproduct = (gson.fromJson(linea, JsonObject.class)).getAsJsonObject("price_instructions");
-            Product.PriceInstructions price_instructions = gson.fromJson(Jsonproduct, Product.PriceInstructions.class);
-            System.out.println(price_instructions.getUnit_price());
-            MercadonaProductstoDB(conn, product, price_instructions);
-        }
-
- */

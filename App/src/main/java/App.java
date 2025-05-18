@@ -1,31 +1,28 @@
 import domain.in.RecipeController;
+import insfrastructure.store.FromEventStore;
 import io.javalin.Javalin;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class App {
-    public static void main(String[] args) {
+    public static void RunTableFromEventStore() throws SQLException, IOException {
+        FromEventStore store = new FromEventStore();
+        store.RunMercadona();
+        store.RunRecipe();
+    }
+
+    public static void main(String[] args) throws SQLException, IOException {
+        try {
+            RunTableFromEventStore();
+        } catch (IOException | SQLException e) {
+            if (e.getMessage() != null && e.getMessage().contains("429")) {
+                System.err.println("⚠️ Límite alcanzado (429): La API no es capaz de procesar tantas peticiones");
+            } else {
+                e.printStackTrace(); // otros errores los mostramos igualmente
+            }
+        }
         Javalin app = Javalin.create().start(7070);
         RecipeController.routes(app);
     }
 }
-
-
-/*
-/app
-├── /backend (API RESTful y lógica de negocio)
-│   ├── /core                   (Lógica de negocio)
-│   │   ├── /domain             (Entidades y objetos de valor)
-│   │   ├── /services           (Casos de uso y servicios)
-│   │   └── /ports              (Interfaces de puertos: entrada y salida)
-│   ├── /adapters               (Adaptadores: implementación de puertos)
-│   │   ├── /inbound            (Controladores para la API REST)
-│   │   ├── /outbound           (Repositorios, servicios externos)
-│   │   └── /config             (Configuración, dependencias)
-│   └── /App.java               (Configuración e inicialización del servidor backend)
-├── /frontend                   (Frontend: interfaz de usuario)
-│   ├── /src
-│   │   ├── /components         (Componentes reutilizables)
-│   │   ├── /pages              (Vistas o páginas)
-│   │   └── /services           (Servicios para interactuar con el backend)
-│   └── /index.html             (Archivo principal HTML)
-└── /build.gradle / pom.xml     (Archivo de configuración de build para backend y frontend)
- */
